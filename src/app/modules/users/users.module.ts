@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-
 // Components
 import { UserComponent } from './components/user/user.component';
 import { NewUserComponent } from './pages/new-user/new-user.component';
