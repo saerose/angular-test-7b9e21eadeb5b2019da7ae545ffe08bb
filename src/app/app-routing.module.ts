@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './modules/main/pages/main.component';
 import { PostsComponent } from './modules/posts/pages/posts/posts.component';
+import { NewUserComponent } from './modules/users/pages/new-user/new-user.component';
 import { UsersComponent } from './modules/users/pages/users/users.component';
 
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'users',
     component: UsersComponent
+  },
+  {
+    path: 'new',
+    component: NewUserComponent
   }
 ];
 
