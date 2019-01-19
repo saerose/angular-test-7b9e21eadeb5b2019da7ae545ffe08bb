@@ -10,7 +10,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './modules/main/pages/main.component';
-import { PostsComponent } from './modules/posts/pages/posts/posts.component';
 
 // Modules
 import { AppRoutingModule } from './app-routing.module';
