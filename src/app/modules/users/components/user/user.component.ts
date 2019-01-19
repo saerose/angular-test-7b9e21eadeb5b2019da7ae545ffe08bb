@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IUser as User } from '../../../../types';
 import { ModulesService } from '../../../modules.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { ModulesService } from '../../../modules.service';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit{
-  user: object;
+  user: User;
 
   constructor(
     private modulesService: ModulesService
@@ -19,7 +20,7 @@ export class UserComponent implements OnInit{
 
   getUsers(): void {
     this.modulesService.getUsersFromApi()
-      .subscribe(response => {
+      .subscribe((response: User) => {
         this.user = response;
       });
   }
