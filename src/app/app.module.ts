@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './modules/main/pages/main.component';
 
 // Modules
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { PostsModule } from './modules/posts/posts.module';
 import { UsersModule } from './modules/users/users.module';
@@ -21,12 +22,13 @@ import { UsersModule } from './modules/users/users.module';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     UsersModule,
     PostsModule
