@@ -16,4 +16,10 @@ export class ModulesService {
 
     return this.httpClient.get(usersUrl);
   }
+
+  getPostsFromApi(): Observable<object> {
+    const postsUrl = 'https://jsonplaceholder.typicode.com/posts'
+
+    return this.httpClient.get(postsUrl);
+  }
 }
