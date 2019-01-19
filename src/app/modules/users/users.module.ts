@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+
 
 // Components
 import { UserComponent } from './components/user/user.component';
@@ -12,7 +14,7 @@ import { UsersComponent } from './pages/users/users.component';
     UserComponent,
     NewUserComponent
   ],
-  imports: [],
+  imports: [CommonModule],
   providers: []
 })
 export class UsersModule {}
