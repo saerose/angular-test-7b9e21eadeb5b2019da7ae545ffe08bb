@@ -23,7 +23,6 @@ import { UsersModule } from './modules/users/users.module';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    PostsComponent
   ],
   imports: [
     BrowserModule,
