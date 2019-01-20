@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+// Components
+import { ErrorComponent } from './components/error/error.component';
 import { MainComponent } from './modules/main/pages/main.component';
 import { PostsComponent } from './modules/posts/pages/posts/posts.component';
 import { NewUserComponent } from './modules/users/pages/new-user/new-user.component';
@@ -26,6 +29,10 @@ const routes: Routes = [
   {
     path: 'new',
     component: NewUserComponent
+  },
+  {
+    path: 'error',
+    component: ErrorComponent
   }
 ];
 

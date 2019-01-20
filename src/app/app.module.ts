@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { PostsModule } from './modules/posts/posts.module';
 import { UsersModule } from './modules/users/users.module';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UsersModule } from './modules/users/users.module';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    NewUserComponent
+    NewUserComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
