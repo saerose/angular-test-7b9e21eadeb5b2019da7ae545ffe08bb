@@ -34,3 +34,8 @@ export interface IPost {
   title: string;
   body: string;
 }
+
+export interface IResponse {
+  body: IPost[] | IUser[];
+  status: number;
+}
