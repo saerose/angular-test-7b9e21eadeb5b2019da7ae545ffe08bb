@@ -7,7 +7,7 @@ import { ModulesService } from '../../../modules.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']
 })
-export class UserComponent implements OnInit{
+export class UserComponent implements OnInit {
   users: User[];
 
   constructor(
