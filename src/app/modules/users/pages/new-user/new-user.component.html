@@ -3,15 +3,15 @@
 
   <form [formGroup]="userForm">
     <div class="new-user__form-field">
-      <label> *Name <input formControlName="name" type="text" /> </label>
+      <label> *Name <input formControlName="name" type="text" required/> </label>
     </div>
 
     <div class="new-user__form-field">
-      <label> *Username <input formControlName="username" type="text" /> </label>
+      <label> *Username <input formControlName="username" type="text" required/> </label>
     </div>
 
     <div class="new-user__form-field">
-      <label> *Email <input formControlName="email" type="text" /> </label>
+      <label> *Email <input formControlName="email" type="text" required/> </label>
     </div>
 
     <div>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="new-user__form-field">
-      <label>* Phone <input formControlName="phone" type="text" /> </label>
+      <label>* Phone <input formControlName="phone" type="text" required/> </label>
     </div>
 
     <div class="new-user__form-field">
