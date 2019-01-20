@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './modules/main/pages/main.component';
+import { NewUserComponent } from './modules/users/pages/new-user/new-user.component';
 
 // Modules
 import { ReactiveFormsModule } from '@angular/forms';
@@ -22,7 +23,8 @@ import { UsersModule } from './modules/users/users.module';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,
