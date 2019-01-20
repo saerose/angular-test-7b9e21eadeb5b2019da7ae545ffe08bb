@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
-import {IGeo} from "../../../../types";
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ModulesService } from '../../../modules.service';
 
 @Component({
   selector: 'new-user',
@@ -10,7 +10,8 @@ import {IGeo} from "../../../../types";
 export class NewUserComponent implements OnInit {
   userForm: FormGroup;
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private modulesService: ModulesService
   ) {}
 
   ngOnInit(): void {
@@ -19,17 +20,23 @@ export class NewUserComponent implements OnInit {
 
   newUserForm(): void {
     this.userForm = this.formBuilder.group({
-      name: new FormControl(''),
-      username: new FormControl(''),
-      email: new FormControl(''),
+      name: new FormControl('', Validators.required),
+      username: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
       street: new FormControl(''),
       city: new FormControl(''),
       zipcode: new FormControl(''),
-      phone: new FormControl(''),
+      phone: new FormControl('', Validators.required),
       website: new FormControl('')
-    })
-    this.userForm.valueChanges
-      .subscribe(result => console.log('form', result))
+    });
+  }
+
+  postUser(): any {
+    const { value: userBody } =  this.userForm
+
+    this.modulesService.postNewUser(userBody)
+      .subscribe(() => {
+        window.location.pathname = '/users';
+      });
   }
 }
-
