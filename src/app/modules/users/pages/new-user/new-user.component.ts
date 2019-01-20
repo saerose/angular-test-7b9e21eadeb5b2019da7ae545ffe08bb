@@ -34,8 +34,8 @@ export class NewUserComponent implements OnInit {
     });
   }
 
-  postUser(): any {
-    const { value: userBody } =  this.userForm
+  postUser(): void {
+    const { value: userBody } =  this.userForm;
 
     this.modulesService.postNewUser(userBody)
       .subscribe((response: Response) => {
