@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IPost as Post } from '../../../../types';
+import { IPost as Post, IResponse as Response } from '../../../../types';
 import { ModulesService } from '../../../modules.service';
+
+const NOT_FOUND = 404;
 
 @Component({
   selector: 'post',
@@ -20,8 +22,11 @@ export class PostComponent implements OnInit {
 
   getPosts(): void {
     this.modulesService.getPostsFromApi()
-      .subscribe((response: Post[]) => {
-        this.posts = response;
+      .subscribe((response: Response) => {
+        this.posts = response.body as Post[];
+        if ( Number(status) === NOT_FOUND) {
+          window.location.pathname = '/error';
+        }
       });
   }
 }

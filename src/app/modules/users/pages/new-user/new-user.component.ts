@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { IResponse as Response } from '../../../../types';
 import { ModulesService } from '../../../modules.service';
+
+const NOT_FOUND = 404;
 
 @Component({
   selector: 'new-user',
@@ -35,8 +38,11 @@ export class NewUserComponent implements OnInit {
     const { value: userBody } =  this.userForm
 
     this.modulesService.postNewUser(userBody)
-      .subscribe(() => {
-        window.location.pathname = '/users';
+      .subscribe((response: Response) => {
+        const { status } = response;
+        if ( Number(status) === NOT_FOUND) {
+          window.location.pathname = '/error';
+        }
       });
   }
 }

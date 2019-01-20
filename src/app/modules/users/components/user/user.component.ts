@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { IUser as User } from '../../../../types';
+import { Component, OnInit } from '@angular/core';
+import { IUser as User, IResponse as Response } from '../../../../types';
 import { ModulesService } from '../../../modules.service';
+
+const NOT_FOUND = 404;
 
 @Component({
   selector: 'user',
@@ -20,8 +22,9 @@ export class UserComponent implements OnInit {
 
   getUsers(): void {
     this.modulesService.getUsersFromApi()
-      .subscribe((response: User[]) => {
-        this.users = response.sort((a: User, b: User) => {
+      .subscribe((response: Response) => {
+        const users = response.body as User[];
+        this.users = users.sort((a: User, b: User) => {
           const aName = a.username.toLowerCase();
           const bName = b.username.toLowerCase();
           if (aName > bName) {
@@ -32,6 +35,9 @@ export class UserComponent implements OnInit {
 
           return 0;
         });
+        if ( Number(status) === NOT_FOUND) {
+          window.location.pathname = '/error';
+        }
       });
   }
 }
